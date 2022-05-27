@@ -26,6 +26,28 @@ h1{
     font-family: 'Rajdhani', sans-serif;
 }
 
+ul{
+  padding: 0 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  height: 100%;
+  overflow-y: auto;
+  background-color: var(--white);
+
+}
+
+.received {
+    background-color: var(--black);
+    color: var(--white);
+  }
+  
+  .sent {
+    align-self: flex-end;
+    background-color: var(--background-blue);
+    color: var(--white);
+  }
+
 .message__container{
     display: flex;
     flex-direction: column;
