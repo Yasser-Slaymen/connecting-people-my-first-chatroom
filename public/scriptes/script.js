@@ -1,35 +1,41 @@
+
 let socket = io()
-let messagesContainer = document.querySelector('ul')
-let input = document.querySelector('.message__input')
-let Form = document.querySelector('.send__container')
+let messagesContainer = document.querySelector('section ul')
+let input = document.querySelector('input')
+let form = document.querySelector('.send__container')
 let message = document.querySelector('li')
-let username = prompt('voeg je naam')
+let name= prompt('voeg je naam')
 
 
 // Eevntlistener
-Form.addEventListener('submit', e => {
+form.addEventListener('submit', e => {
     e.preventDefault()
     let message = input.value
     appendMessage(`jij:${message}`)
-    socket.emit(' send message', message)
+    socket.emit('send-chat-message', message)
     input.value = ''
     
 })
 appendMessage('You joined to chat')
 
 // Socket functions
-socket.emit('new-user',username)
+socket.emit('new-user',name)
+
 socket.on('chat-message',(data) => {
-    receivedMessage(`${data.username}: ${data.message}`)
+    receivedMessage(`${data.name}: ${data.message}`)
 })
 
-socket.on('user-connected',(username) =>{
-    appendMessage(`${username} connected`)
+socket.on('user-connected',(name) =>{
+    appendMessage(`${name} connected`)
 })
 
 socket.on('user-diconnected', (data) =>{
-    appendMessage(`${username} disconnected`)
+    appendMessage(`${name} disconnected`)
 })
+
+
+
+
 
 // functions
 

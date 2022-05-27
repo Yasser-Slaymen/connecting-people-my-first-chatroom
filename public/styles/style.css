@@ -30,6 +30,7 @@ ul{
   padding: 0 1em;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   gap: 0.5em;
   height: 100%;
   overflow-y: auto;
@@ -39,6 +40,8 @@ ul{
 
 .received {
     background-color: var(--black);
+    border-radius: 2em ;
+    width: 3em;
     color: var(--white);
   }
   
@@ -66,13 +69,13 @@ ul{
     background-color:var(--lighter-blue);
 }
 
-.send__container{
+form{
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 1em;
 }
-.message__input{
+input{
     width:75%;
     height: 3em;
     margin-right: 1em;
