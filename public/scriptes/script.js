@@ -7,11 +7,19 @@ let message = document.querySelector('li')
 let name= prompt('voeg je naam')
 
 
+// Welcom & bye consol message
+socket.on('message',message =>{
+    console.log(message)
+})
+
+
 // Eevntlistener
 form.addEventListener('submit', e => {
     e.preventDefault()
-    let message = input.value
+    // Get message text
+    const message = input.value
     appendMessage(`IK:${message}`)
+    // Emit message to server
     socket.emit('send-chat-message', message)
     input.value = ''
     
