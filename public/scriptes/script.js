@@ -2,7 +2,7 @@
 let socket = io()
 let messagesContainer = document.querySelector('section ul')
 let input = document.querySelector('input')
-let form = document.querySelector('.send__container')
+let form = document.querySelector('form')
 let message = document.querySelector('li')
 let name= prompt('voeg je naam')
 
@@ -11,7 +11,7 @@ let name= prompt('voeg je naam')
 form.addEventListener('submit', e => {
     e.preventDefault()
     let message = input.value
-    appendMessage(`jij:${message}`)
+    appendMessage(`IK:${message}`)
     socket.emit('send-chat-message', message)
     input.value = ''
     
