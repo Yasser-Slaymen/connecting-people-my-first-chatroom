@@ -1,34 +1,43 @@
 <%- include('../includes/head') %>
-<main class="message__container">
+
+
+<main>
+
     <header class="nav__bare">
+
+        <h1>Start Chating </h1>
+
         <picture id="logo__nav">
             <source srcset="./images/CTC_Primary_Logo_White.avif" type="image/avif">
             <source srcset="./images/CTC_Primary_Logo_White.webp" type="image/webp">
             <img src="./images/CTC_Primary_Logo_White.png" alt="logo" width="138px" height=" 45px">
         </picture>
 
-        <h1>Start Chating </h1>
+        
 
     </header>
+    <section class="chatForm__container">
 
-    <section class="user__typing">
-        <ul class="chat-messages">
-            <!-- <li class="message">
-                <p class="meta">NO <span>10:00am</span></p>
-                <p class="text">Lorem ipsum dolor sit amet.</p>
-            </li> -->
-        </ul>
-       
+                <section class="user__container">
+                    <ul class="chat-messages">
+                        <li class="message">
+                            <p class="meta">NO <span>10:00am</span></p>
+                            <p class="text">Lorem ipsum dolor sit amet.</p>
+                        </li>
+                    </ul>
+                
+                </section>
+                <form action="">
+
+                    <input type="text" id="msg" autocomplete="off" placeholder="Type....">
+                    <button type="submit"> Send 
+                        <span><img  class="icon" src="./images/Vector.png" alt="icon sending"></span>
+                    </button>
+                </form>
+
     </section>
-    <form action="">
-
-        <input type="text" id="msg" autocomplete="off" placeholder="Type....">
-        <button type="submit"> Send 
-            <span><img  class="icon" src="./images/Vector.png" alt="icon sending"></span>
-         </button>
-    </form>
-
 
 
 </main>
+
 <%- include('../includes/foot') %>   

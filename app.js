@@ -3,7 +3,7 @@ const app = express()
 const http = require('http').createServer(app)
 const io = require('socket.io')(http)
 const path = require('path')
-const PORT = process.env.PORT || 2000
+const PORT = process.env.PORT || 4000
 const formatMessage = require('./uitls/messages')
 const botName = 'Coding the curbsn Bot'
 
