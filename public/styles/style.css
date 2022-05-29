@@ -100,7 +100,7 @@ input{
     padding: 0 1.5em;
     font-size: 1em;
     margin-left: 1.5em;
-    border-radius: 1em 0 0 1em;
+    border-radius: .5em 0 0 .5em;
     border: 1px solid blue;
 }
 
@@ -111,7 +111,7 @@ button{
     width:20%;
     height:2.3em;
     margin-right: 1.5em;
-    border-radius: 0 1em 1em 0;
+    border-radius: 0 .5em .5em 0;
     cursor: pointer;
     background-color: var(--dark-blue);
     color: #fff;
@@ -124,7 +124,7 @@ button:hover{
 }
 
 /* icon */
-.plane{
+.icon{
   width: 1em;
   height: 1em;
   color: rgb(227, 14, 14);
