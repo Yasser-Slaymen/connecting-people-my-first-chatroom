@@ -18,7 +18,7 @@ form.addEventListener('submit', e => {
     e.preventDefault()
     // Get message text
     const message = input.value
-    appendMessage(`IK:${message}`)
+    appendMessage(`You : ${message}`)
     // Emit message to server
     socket.emit('send-chat-message', message)
     input.value = ''
@@ -50,7 +50,8 @@ socket.on('user-diconnected', (data) =>{
 function appendMessage(message) {
     let messageEL = document.createElement('li')
     messageEL.classList.add('sent')
-    messageEL.innerText = message
+    messageEL.innerText =  message
+   
     messagesContainer.append(messageEL)
 
 }
@@ -64,17 +65,4 @@ function receivedMessage(message) {
 
 
 
-// let typing = false
-// input.addEventListener('keyup', () =>{
-//     if(!typing && input.value !==''){
-//         typing = true
-//         socketemit('start-typing')
-//     } else if (typing && input.value ===''){
-//         typing = false
-//         socket.emit('stop-typing')
-//     }
-// })
-// if(input.value === ''){
-    //     socket.emit('message',messageInput.value)
-    //     messageInput.value =''
-    // }
+
