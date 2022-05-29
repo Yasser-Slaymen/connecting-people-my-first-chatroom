@@ -1,68 +1,112 @@
-
-let socket = io()
-let messagesContainer = document.querySelector('section ul')
-let input = document.querySelector('input')
+const socket = io()
+let ul = document.querySelector('.chat-messages')
 let form = document.querySelector('form')
-let message = document.querySelector('li')
-let name= prompt('voeg je naam')
+const users = prompt("what's your nickname?") || randomStr()
 
 
-// Welcom & bye consol message
-socket.on('message',message =>{
+// Message from server 
+socket.on('message', message => {
     console.log(message)
-})
-
-
-// Eevntlistener
-form.addEventListener('submit', e => {
-    e.preventDefault()
-    // Get message text
-    const message = input.value
-    appendMessage(`You : ${message}`)
-    // Emit message to server
-    socket.emit('send-chat-message', message)
-    input.value = ''
+    outputMessage(message)
     
-})
-appendMessage('You joined to chat')
+    // Scroll down
+    // ul.scrollTop = ul.scrollHeight
+    ul.scrollTo(0, ul.scrollHeight)
 
-// Socket functions
-socket.emit('new-user',name)
 
-socket.on('chat-message',(data) => {
-    receivedMessage(`${data.name}: ${data.message}`)
-})
+    // test username
+    socket.emit("register users", users)
 
-socket.on('user-connected',(name) =>{
-    appendMessage(`${name} connected`)
+
+
 })
 
-socket.on('user-diconnected', (data) =>{
-    appendMessage(`${name} disconnected`)
+// Message sumite
+form.addEventListener('submit', (e) => {
+    e.preventDefault()
+    const msg = e.target.elements.msg.value;
+    // console.log(msg)
+
+    // Emit message to server
+    socket.emit('ChatMessage',msg )
+    // Clear input
+    e.target.elements.msg.value = ''
+    e.target.elements.msg.focus()
 })
 
-
-
-
-
-// functions
-
-function appendMessage(message) {
-    let messageEL = document.createElement('li')
-    messageEL.classList.add('sent')
-    messageEL.innerText =  message
-   
-    messagesContainer.append(messageEL)
-
+// Outputmeessage to Dom
+function  outputMessage(message) {
+    const divm = document.createElement('li')
+    divm.classList.add('message')
+    divm.innerHTML = `
+    <p class="meta">
+    ${message.username}<span>${message.time}</span> </p>
+    <p class="text">
+    ${message.text}
+    </p>
+    <span>${users}</span>
+    `
+    ul.appendChild(divm)
+    
 }
 
-function receivedMessage(message) {
-    let receivedMessageEl = document.createElement('li')
-    receivedMessageEl.classList.add('received')
-    receivedMessageEl.innerText = message
-    messagesContainer.append(receivedMessageEl)
-  }
+// Get username from URL
+// const {username,rooms} = qs.parse(location.search, {
+//     ignoreQueryPrefix: true
+// })
+//  console.log(username)
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // Eevntlistener
+// Form.addEventListener('submit', e => {
+//     e.preventDefault()
+//     if(input.value === ''){
+//         socket.emit('message',messageInput.value)
+//         messageInput.value =''
+//     }
+// })
+
+// let typing = false
+// input.addEventListener('keyup', () =>{
+//     if(!typing && input.value !==''){
+//         typing = true
+//         socket.emit('start-typing')
+//     } else if (typing && input.value ===''){
+//         typing = false
+//         socket.emit('stop-typing')
+//     }
+// })
