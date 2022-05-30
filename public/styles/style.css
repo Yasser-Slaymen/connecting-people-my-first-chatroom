@@ -39,6 +39,11 @@ main{
     border-radius: 1em;
     /* overflow: hidden; */
 }
+img{
+    color: #fff;
+    width: 7em;
+    height: 13em;
+}
 
 
 .nav__bare{
@@ -85,6 +90,7 @@ main{
     background-color: #d5d4ea;
     padding: 1em;
     margin: 3em;
+    border-radius: 1em;
 }
 
 form{

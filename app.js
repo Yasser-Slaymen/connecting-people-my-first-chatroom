@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const compression = require('compression')
 const http = require('http').createServer(app)
 const io = require('socket.io')(http)
 const path = require('path')
@@ -10,6 +11,8 @@ const botName = 'Coding the curbsn Bot'
 
 // statics 
 app.use(express.static(path.resolve('public')))
+app.use(compression())
+
 
 // ejs template engine
 app.set('view engine', 'ejs')
