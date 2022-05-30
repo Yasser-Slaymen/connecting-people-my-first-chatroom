@@ -32,9 +32,12 @@ io.on('connection', socket =>{
 
         // Listen for chatmassege
         socket.on('ChatMessage',msg => {
+            io.emit('message',formatMessage(``, msg))
+
             // console.log(msg)
             // io.emit('message',formatMessage(msg.sender, msg.value))
-            io.emit('message',formatMessage(`user`, msg))
+            // io.emit('message',formatMessage(`user`, msg))
+            
         })
 
         // Run when user disconnects

@@ -6,7 +6,7 @@ const users = prompt("what's your nickname?") || randomStr()
 
 // Message from server 
 socket.on('message', message => {
-    console.log(message)
+    // console.log(message)
     outputMessage(message)
     
     // Scroll down
