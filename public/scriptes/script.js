@@ -52,11 +52,7 @@ function  outputMessage(message) {
     
 }
 
-// Get username from URL
-// const {username,rooms} = qs.parse(location.search, {
-//     ignoreQueryPrefix: true
-// })
-//  console.log(username)
+
 
 
 
