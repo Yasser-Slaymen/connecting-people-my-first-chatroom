@@ -39,12 +39,14 @@ function  outputMessage(message) {
     const divm = document.createElement('li')
     divm.classList.add('message')
     divm.innerHTML = `
+    <p><span class="span_name">${users}</span></p>
     <p class="meta">
-    ${message.username}<span>${message.time}</span> </p>
+    ${message.username} </p>
     <p class="text">
     ${message.text}
     </p>
-    <span>${users}</span>
+
+    <span class="span_time">${message.time}</span> 
     `
     ul.appendChild(divm)
     
