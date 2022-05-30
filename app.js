@@ -33,6 +33,7 @@ io.on('connection', socket =>{
         // Listen for chatmassege
         socket.on('ChatMessage',msg => {
             // console.log(msg)
+            // io.emit('message',formatMessage(msg.sender, msg.value))
             io.emit('message',formatMessage(`user`, msg))
         })
 
