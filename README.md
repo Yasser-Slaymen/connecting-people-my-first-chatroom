@@ -37,6 +37,7 @@ In deze chatroom  kun je met andere in een realtime omgeving.
 
 
 ## Installatie
+ git clone https://github.com/Yasser-Slaymen/connecting-people-my-first-chatroom.git
 
 ## Gebruik
 * npm install
