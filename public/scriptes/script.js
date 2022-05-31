@@ -3,6 +3,8 @@ let ul = document.querySelector('.chat-messages')
 let form = document.querySelector('form')
 const users = prompt("what's your nickname?") || randomStr()
 
+// test username
+socket.emit("register users", users)
 
 // Message from server 
 socket.on('message', message => {
@@ -12,12 +14,6 @@ socket.on('message', message => {
     // Scroll down
     // ul.scrollTop = ul.scrollHeight
     ul.scrollTo(0, ul.scrollHeight)
-
-
-    // test username
-    socket.emit("register users", users)
-
-
 
 })
 
