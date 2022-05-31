@@ -18,16 +18,34 @@ troom
 ## Beschrijving
 In deze chatroom  kun je met andere in een realtime omgeving.
 
-[Kun je hier Chat app gebruiken 🌐 ](#beschrijving)
+[Je kunt hier Chat app gebruiken 🌐 ](https://coonecting-people.herokuapp.com/)
+
+
 
 ## Kenmerken
-<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met Javascript gedaan en hoe? Misschien heb je een framwork of library gebruikt? -->
+
+*  🦎 HTML
+*  🦎 CSS
+*  🦎 Javascript
+*  🦎 NodeJs
+*  🦎 Express
+*  🦎 Socket.io
+*  🦎 Moment
+*  🦎 PostCss
+*  🦎 Compression
+*  🦎 Herokuapp
+
 
 ## Installatie
 
 ## Gebruik
+* npm install
+* npm run start
 
 ## Bronnen
+* [Socket.io](https://socket.io/)
+* [Heroku](https://coonecting-people.herokuapp.com/)
+
 
 ## Licentie
 
