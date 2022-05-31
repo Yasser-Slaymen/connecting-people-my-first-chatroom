@@ -1,6 +1,6 @@
 > _Fork_ deze leertaak en ga aan de slag. Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
 
-# My first cha
+# My first chatroom
 ![Screenshot (32)](https://user-images.githubusercontent.com/90189815/171277816-dbfd7247-dd7e-41be-8b39-90d4ae6ef3ba.png)
 troom
 
