@@ -33,7 +33,7 @@ io.on('connection', socket =>{
         // Broadcast when a user connects
         socket.broadcast.emit('message', formatMessage(botName,` user has joined to chat`))
 
-        // Listen for chatmassege
+        // Listen for chat masseges
         socket.on('ChatMessage',msg => {
             io.emit('message',formatMessage(`User`, msg))
 
