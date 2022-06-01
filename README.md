@@ -32,6 +32,8 @@ In deze chatroom  kun je met andere in een realtime omgeving.
 *  🦎 Socket.io
 *  🦎 Moment
 *  🦎 PostCss
+*  🦎 Cssnano
+*  🦎 Ejs
 *  🦎 Compression
 *  🦎 Herokuapp
 
