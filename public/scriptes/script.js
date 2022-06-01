@@ -44,7 +44,7 @@ function  outputMessage(message) {
 
     <span class="span_time">${message.time}</span> 
     `
-    ul.appendChild(divm)
+    ul.appendChild(messageContainer)
     
 }
 
