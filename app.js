@@ -5,8 +5,8 @@ const http = require('http').createServer(app)
 const io = require('socket.io')(http)
 const path = require('path')
 const PORT = process.env.PORT || 4000
-const formatMessage = require('./uitls/messages')
-const botName = 'Coding the curbsn Bot'
+const formatMessage = require('./utils/messages')
+const botName = 'Coding the curbs Bot'
 
 
 // statics 
@@ -27,31 +27,25 @@ app.get('/', (request, response) =>{
 // Run when user connects
 io.on('connection', socket =>{
 
-        // Welcome current user
-        socket.emit('message',formatMessage(botName,'Welcom to chat'))
+    // Welcome current user
+    socket.emit('message',formatMessage(botName,'Welcom to chat'))
 
-        // Broadcast when a user connects
-        socket.broadcast.emit('message', formatMessage(botName,` user has joined to chat`))
+    // Broadcast when a user connects
+    socket.broadcast.emit('message', formatMessage(botName,` user has joined to chat`))
 
-        // Listen for chat masseges
-        socket.on('ChatMessage',msg => {
-            io.emit('message',formatMessage(`User`, msg))
+    // Listen for chat masseges
+    socket.on('ChatMessage',msg => {
+        io.emit('message', formatMessage(`User`, msg))
 
-            // console.log(msg)
-            // io.emit('message',formatMessage(msg.sender, msg.value))
-            // io.emit('message',formatMessage(`user`, msg))
-            
-        })
+        // console.log(msg)
+        // io.emit('message',formatMessage(msg.sender, msg.value))
+        // io.emit('message',formatMessage(`user`, msg))
+    })
 
-        // Run when user disconnects
-        socket.on('disconnect', () => {
-            io.emit('message',formatMessage(botName,` user has left`))
-        })
-
-        
-
-
-
+    // Run when user disconnects
+    socket.on('disconnect', () => {
+        io.emit('message',formatMessage(botName,` user has left`))
+    })
 })
 
 

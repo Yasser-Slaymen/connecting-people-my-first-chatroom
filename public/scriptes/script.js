@@ -1,10 +1,10 @@
 const socket = io()
 let ul = document.querySelector('.chat-messages')
 let form = document.querySelector('form')
-const users = prompt("what's your nickname?") || randomStr()
+// const users = prompt("what's your nickname?") || randomStr()
 
 // test username
-socket.emit("register users", users)
+// socket.emit("register users", users)
 
 // Message from server 
 socket.on('message', message => {
@@ -32,10 +32,10 @@ form.addEventListener('submit', (e) => {
 
 // Outputmeessage to Dom
 function  outputMessage(message) {
-    const divm = document.createElement('li')
-    divm.classList.add('message')
-    divm.innerHTML = `
-    <p><span class="span_name">${users}</span></p>
+    const messageContainer = document.createElement('li')
+    messageContainer.classList.add('message')
+    messageContainer.innerHTML = `
+    
     <p class="meta">
     ${message.username} </p>
     <p class="text">
@@ -47,6 +47,8 @@ function  outputMessage(message) {
     ul.appendChild(divm)
     
 }
+
+/* <p><span class="span_name">${users}</span></p> */
 
 
 
