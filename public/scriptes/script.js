@@ -87,22 +87,3 @@ function  outputMessage(message) {
 
 
 
-// // Eevntlistener
-// Form.addEventListener('submit', e => {
-//     e.preventDefault()
-//     if(input.value === ''){
-//         socket.emit('message',messageInput.value)
-//         messageInput.value =''
-//     }
-// })
-
-// let typing = false
-// input.addEventListener('keyup', () =>{
-//     if(!typing && input.value !==''){
-//         typing = true
-//         socket.emit('start-typing')
-//     } else if (typing && input.value ===''){
-//         typing = false
-//         socket.emit('stop-typing')
-//     }
-// })
