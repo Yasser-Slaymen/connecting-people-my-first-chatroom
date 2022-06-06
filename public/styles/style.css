@@ -37,7 +37,6 @@ main{
     background-color:var(--white);
     border: 2em solid var(--lighter-blue);
     border-radius: 1em;
-    /* overflow: hidden; */
 }
 img{
     color: #fff;
