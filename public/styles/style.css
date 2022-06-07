@@ -79,9 +79,7 @@ img{
 .chat-messages::-webkit-scrollbar {
    
     width: 0em;  
-    /* background-color: rgb(249, 10, 22); */
-    /* border-radius: 1px;       
-    border: .1px solid orange;   */
+   
   }
 
 /* li */
